@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour {
     private PlayerInput playerInput; // 플레이어 입력을 알려주는 컴포넌트
     private Rigidbody playerRigidbody; // 플레이어 캐릭터의 리지드바디
     private Animator playerAnimator; // 플레이어 캐릭터의 애니메이터
+    private Vector3 mousePos;   // 룩앳 할 마우스 위치
 
     private void Start() {
         // 사용할 컴포넌트들의 참조를 가져오기
@@ -42,7 +43,8 @@ public class PlayerMovement : MonoBehaviour {
 
     // 입력값에 따라 캐릭터를 좌우로 회전
     private void Rotate() {
-        // 상대적으로 회전할 수치 계산
+        //// 상대적으로 회전할 수치 계산
+
         float turn = playerInput.rotate * rotateSpeed * Time.deltaTime;
         // 리지드 바디를 이용해 게임 오브젝트 회전 변경
         playerRigidbody.rotation =

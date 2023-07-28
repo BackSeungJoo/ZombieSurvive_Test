@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/01_ZombieSurvive/Scenes/MainScene.unity
+    guid: 1dbaf851f04ee94448493c4c95bc0fb3
   m_configObjects: {}
