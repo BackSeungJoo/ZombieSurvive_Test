@@ -8,3 +8,29 @@ public class ZombieData : ScriptableObject {
     public float speed = 2f; // 이동 속도
     public Color skinColor = Color.white; // 피부색
 }
+
+//public class ZombieData2
+//{
+//    public float health = default; // 체력
+//    public float damage = default; // 공격력
+//    public float speed = default; // 이동 속도
+//    public Color skinColor = default; // 피부색
+
+//    public ZombieData2 () { }
+
+//    public ZombieData2(ZombieData data) 
+//    {
+//        health = data.health;
+//        damage = data.damage;
+//        speed = data.speed;
+//        skinColor = data.skinColor;
+//    }
+
+//    public void SetUpData(float health_, float damage_, float speed_, Color skinColor_)
+//    {
+//        health = health_;
+//        damage = damage_;
+//        speed = speed_;
+//        skinColor = skinColor_;
+//    }
+//}

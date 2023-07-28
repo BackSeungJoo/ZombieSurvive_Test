@@ -14,7 +14,22 @@ public class zombieSpawner : MonoBehaviour
 
     private void Awake()
     {
-        zombieDatas[0] = ResourceManager.instance.zombieData_default;
+        List<Dictionary<string, object>> zombies = CSVReader.Read("example");
+
+        for (int i = 0; i < zombies.Count; i++)
+        {
+            ZombieData zombie = ScriptableObject.CreateInstance<ZombieData>();
+            //Debug.Log(zombies[i]);
+            //Debug.LogFormat("type : " + zombies[i]["ZOMBIE_TYPE"] + " hp : " + zombies[i]["HEALTH"] + " dmg : " + zombies[i]["DAMAGE"]
+            //    + "\nspd : " + zombies[i]["SPEED"] + " skin : " + zombies[i]["SKIN_COLOR"] + "\n\n");
+
+            zombie.health = float.Parse(zombies[i]["HEALTH"].ToString());
+            zombie.damage = float.Parse(zombies[i]["DAMAGE"].ToString());
+            zombie.speed = float.Parse(zombies[i]["SPEED"].ToString());
+            ColorUtility.TryParseHtmlString(zombies[i]["SKIN_COLOR"].ToString(), out zombie.skinColor);
+
+            zombieDatas[i] = zombie;
+        }
     }
 
     void Update()
@@ -86,4 +101,5 @@ public class zombieSpawner : MonoBehaviour
         // Á»ºñ »ç¸Á ½Ã Á¡¼ö »ó½Â
         zombie.onDeath += () => GameManager.instance.AddScore(100);
     }
+
 }
